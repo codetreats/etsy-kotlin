@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "net.codetreats"
-version = "0.0.1"
+version = "0.0.2"
 
 repositories {
     mavenCentral()
@@ -18,9 +18,10 @@ repositories {
 }
 
 dependencies {
-    implementation("net.codetreats:kotlin-rest-client:0.0.2-rc.2-SNAPSHOT")
+    implementation("net.codetreats:kotlin-rest-client:0.0.2")
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
     implementation("com.squareup.moshi:moshi-adapters:1.14.0")
+    implementation("io.ktor:ktor-client-core:2.3.4")
 }
 
 tasks.test {
