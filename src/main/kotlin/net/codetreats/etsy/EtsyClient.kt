@@ -4,12 +4,12 @@ import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import net.codetreats.etsy.types.EtsyListResponse
-import net.codetreats.etsy.types.ListingStateAdapter
+import net.codetreats.etsy.model.EtsyListResponse
+import net.codetreats.etsy.model.ListingStateAdapter
 import net.codetreats.etsy.util.LocalDateTimeAdapter
 import net.codetreats.rest.RestClient
+import org.apache.logging.log4j.Logger
 import java.time.LocalDateTime
-import java.util.logging.Logger
 
 class EtsyClient(
     apiUrl: String,
@@ -33,6 +33,7 @@ class EtsyClient(
         val subUrlReplaced = subUrl.replace("/:shopId/", "/$shopId/")
         logger?.info("GET $subUrlReplaced${params.filterNotNull().asUrl()} (${headers.asList()})")
         val message = restClient.get(subUrlReplaced, params.filterNotNull(), headers).message!!
+        logger?.debug("Message: $message")
         val responseType = Types.newParameterizedType(EtsyListResponse::class.java, T::class.java)
         val adapter: JsonAdapter<EtsyListResponse<T>> = moshi.adapter(responseType)
         return adapter.fromJson(message)!!

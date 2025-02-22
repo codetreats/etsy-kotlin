@@ -1,7 +1,6 @@
 package net.codetreats.etsy
 
-import net.codetreats.etsy.types.*
-import net.codetreats.etsy.util.unixTimestamp
+import net.codetreats.etsy.model.*
 import net.codetreats.etsy.util.unixTimestampStr
 import java.time.LocalDateTime
 
@@ -48,8 +47,8 @@ class EtsyApi(private val etsyClient: EtsyClient) {
         offset: Int = 0
     ): EtsyListResponse<LedgerEntry> {
         val params = mutableMapOf<String, String?>()
-        params["min_created"] = minCreated?.unixTimestampStr()
-        params["max_created"] = maxCreated?.unixTimestampStr()
+        params["min_created"] = minCreated.unixTimestampStr()
+        params["max_created"] = maxCreated.unixTimestampStr()
         params["limit"] = limit.toString()
         params["offset"] = offset.toString()
         return etsyClient.get<LedgerEntry>("/shops/:shopId/payment-account/ledger-entries", params)

@@ -1,4 +1,4 @@
-package net.codetreats.etsy.types
+package net.codetreats.etsy.model
 
 enum class SortOrder(val value: String) {
     ASCENDING("asc"),

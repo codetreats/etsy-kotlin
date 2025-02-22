@@ -1,4 +1,4 @@
-package net.codetreats.etsy.types
+package net.codetreats.etsy.model
 
 import com.squareup.moshi.Json
 
@@ -8,5 +8,6 @@ data class PaymentAmount(
     @Json(name = "currency_code")
     val currencyCode: String
 ) {
-    fun amount() = amount / divisor
+    val value: Double = (amount.toDouble() / divisor.toDouble()).round()
+    private fun Double.round() = String.format("%.2f", this).toDouble()
 }

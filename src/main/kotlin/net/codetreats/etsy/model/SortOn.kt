@@ -1,4 +1,4 @@
-package net.codetreats.etsy.types
+package net.codetreats.etsy.model
 
 enum class SortOn(val value: String) {
     CREATED("created"),

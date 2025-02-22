@@ -1,4 +1,4 @@
-package net.codetreats.etsy.types
+package net.codetreats.etsy.model
 
 import com.squareup.moshi.*
 import java.lang.IllegalArgumentException

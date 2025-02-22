@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "net.codetreats"
-version = "0.0.2"
+version = "0.0.4"
 
 repositories {
     mavenCentral()
@@ -18,10 +18,10 @@ repositories {
 }
 
 dependencies {
-    implementation("net.codetreats:kotlin-rest-client:0.0.2")
-    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
-    implementation("com.squareup.moshi:moshi-adapters:1.14.0")
-    implementation("io.ktor:ktor-client-core:2.3.4")
+    implementation("net.codetreats:kotlin-rest-client:0.0.4")
+    implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+    implementation("com.squareup.moshi:moshi-adapters:1.15.1")
+    implementation("org.apache.logging.log4j:log4j-api:2.24.1")
 }
 
 tasks.test {

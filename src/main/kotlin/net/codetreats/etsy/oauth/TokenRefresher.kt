@@ -4,7 +4,6 @@ import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import io.ktor.http.*
-import net.codetreats.etsy.asUrl
 import net.codetreats.rest.RestClient
 import java.util.logging.Logger
 import java.time.LocalDateTime
